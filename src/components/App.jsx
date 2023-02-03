@@ -13,8 +13,7 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
+  
   };
 
   handleOnChange = e => {
@@ -26,7 +25,7 @@ export class App extends Component {
     const id = nanoid();
     const name = e.name;
     const number = e.number;
-    const contactsLists = [...this.state.contacts];
+    const contactsLists = this.state.contacts;
 
     if (contactsLists.findIndex(contact => name === contact.name) !== -1) {
       alert(`${name} is already in contacts.`);
